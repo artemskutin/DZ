@@ -1,36 +1,58 @@
-﻿// Задача 1: Напишите программу, которая принимает на вход число и проверяет, кратно ли оно одновременно 7 и 23.
-
-// int a = 322;
-// if (a % 7 == 0 && a % 23 == 0)
-// {
-// Console.WriteLine("да");
-// }
-// else
-// {
-// Console.WriteLine("нет");
-// }
-
-// Задача 2: Напишите программу, которая принимает на вход координаты точки 
-// (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт номер координатной четверти плоскости, в которой находится эта точка.
-// ЭТУ ЗАДАЧУ Я НЕ ПОНЯЛ КАК ДЕЛАТЬ!!!!!
+﻿//Задача 2: Подсчет количества четных чисел в массиве
 
 
-// Задача 3: Напишите программу, которая принимает на вход целое число из отрезка [10, 99] и показывает наибольшую цифру числа.
+int[] numbers = new int[10];
+Random random = new Random();
+int evenCount = 0;
 
-// int number = 13;
-// int a = number % 5;
-// int max = a;
+for (int i = 0; i < numbers.Length; i++)
+{
+numbers[i] = random.Next(100, 1000);
+Console.Write(numbers[i] + " ");
+if (numbers[i] % 2 == 0)
+{
+evenCount++;
+}
+Console.WriteLine($"\nКоличество четных чисел в массиве: {evenCount}");
+}
 
-// Console.WriteLine($"Максимальное число {max}");
 
-// Задача 4: Напишите программу, которая на вход принимает натуральное число N, а на выходе показывает его цифры через запятую.
+//Задача 1: Бесконечный запрос чисел до ввода ‘q’ или числа с четной суммой цифр
 
-int number = 456;
-int a = number / 100;
-int b = number / 90;
-int g = number % 10;
+while (true)
+{
+  Console.Write("Введите число или 'q' для выхода: ");
+  string input = Console.ReadLine();
+  if (input == "q")
+  {
+    break;
+  }
+  int number;
+  if (int.TryParse(input, out number))
+  {
+    int sum = 0;
+    while (number > 0)
+    {
+      sum += number % 10;
+      number /= 10;
+    }
+    if (sum % 2 == 0)
+    {
+      Console.WriteLine("[STOP]");
+      break;
+    }
+  }
+  else
+  {
+    Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число или 'q'.");
+  }
+}
 
-Console.Write(a + ",");
-Console.Write(b + ",");
-Console.Write(g);
+
+
+
+
+
+
+
 
