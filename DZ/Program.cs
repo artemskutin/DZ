@@ -1,58 +1,33 @@
-﻿//Задача 2: Подсчет количества четных чисел в массиве
+﻿// string input = "aBcD1ef!-";
+// // Преобразование всех заглавных букв в строчные
+// string result = input.ToLower();
+// // Вывод результата
+// Console.WriteLine(result);
 
-
-int[] numbers = new int[10];
-Random random = new Random();
-int evenCount = 0;
-
-for (int i = 0; i < numbers.Length; i++)
-{
-numbers[i] = random.Next(100, 1000);
-Console.Write(numbers[i] + " ");
-if (numbers[i] % 2 == 0)
-{
-evenCount++;
-}
-Console.WriteLine($"\nКоличество четных чисел в массиве: {evenCount}");
-}
-
-
-//Задача 1: Бесконечный запрос чисел до ввода ‘q’ или числа с четной суммой цифр
-
-while (true)
-{
-  Console.Write("Введите число или 'q' для выхода: ");
-  string input = Console.ReadLine();
-  if (input == "q")
-  {
-    break;
-  }
-  int number;
-  if (int.TryParse(input, out number))
-  {
-    int sum = 0;
-    while (number > 0)
-    {
-      sum += number % 10;
-      number /= 10;
-    }
-    if (sum % 2 == 0)
-    {
-      Console.WriteLine("[STOP]");
-      break;
-    }
-  }
-  else
-  {
-    Console.WriteLine("Некорректный ввод. Пожалуйста, введите целое число или 'q'.");
-  }
-}
-
-
-
-
-
-
-
-
+// {
+//   public static void Main(string[] args)
+//   {
+    
+//     char[,] charArray = new char[,] { { 'a', 'b' }, { 'c', 'd' } };
+    
+//     string result = CreateStringFrom2DArray(charArray);
+  
+//     Console.WriteLine(result);
+//   }
+  
+//   public static string CreateStringFrom2DArray(char[,] array)
+//   {
+//     string result = "";
+    
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//       for (int j = 0; j < array.GetLength(1); j++)
+//       {
+       
+//         result += array[i, j];
+//       }
+//     }
+//     return result;
+//   }
+// }
 
