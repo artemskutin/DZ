@@ -1,33 +1,40 @@
-﻿// string input = "aBcD1ef!-";
-// // Преобразование всех заглавных букв в строчные
-// string result = input.ToLower();
-// // Вывод результата
-// Console.WriteLine(result);
+﻿
+// Напишите программу, которая будет принимать 
+// на вход число и  возвращать сумму его цифр.
 
-// {
-//   public static void Main(string[] args)
-//   {
+
+int SumOfDigits (int number)
+{
     
-//     char[,] charArray = new char[,] { { 'a', 'b' }, { 'c', 'd' } };
+    if (number == 0) return 0; 
+    int result = number % 10 + SumOfDigits(number / 10);
+    return result;
+}
+
+Console.WriteLine(SumOfDigits(82));
+
+
+
+
+// Рекурсия - вызов метода внутри метода
+// Факториал - произ-е чисел от 1 до N включительно 
+
+
+int FindFactorial (int n)
+{
     
-//     string result = CreateStringFrom2DArray(charArray);
-  
-//     Console.WriteLine(result);
-//   }
-  
-//   public static string CreateStringFrom2DArray(char[,] array)
-//   {
-//     string result = "";
+    if (n == 1) return 1;
     
-//     for (int i = 0; i < array.GetLength(0); i++)
-//     {
-//       for (int j = 0; j < array.GetLength(1); j++)
-//       {
-       
-//         result += array[i, j];
-//       }
-//     }
-//     return result;
-//   }
-// }
+    return n * FindFactorial(n - 1);
+}
+Console.WriteLine(FindFactorial(4)); 
+
+
+
+
+
+
+
+
+
 
