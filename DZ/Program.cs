@@ -1,40 +1,44 @@
-﻿
-// Напишите программу, которая будет принимать 
-// на вход число и  возвращать сумму его цифр.
+﻿// Задача 1: Задайте значения M и N. Напишите 
+// программу, которая выведет все натуральные числа 
+// в промежутке от M до N. Использовать рекурсию, не 
+// использовать циклы.
+// int M = 1;
+// int N = 5;
+// void ShowNumbers(int M, int N)
+// {
+//     if (M == N)  
+//     {
+//         Console.Write(M);
+//         return;
+//     }
+//     Console.Write(M + " ");
+//     ShowNumbers(M + 1, N);
+// }
+// ShowNumbers(M, N); 
+
+// int M = 4;
+// int N = 8;
+// void ShowNumbers(int M, int N)
+// {
+//     if (M == N)  
+//     {
+//         Console.Write(M);
+//         return;
+//     }
+//     Console.Write(M + " ");
+//     ShowNumbers(M + 1, N);
+// }
+// ShowNumbers(M, N); 
+
+// Задача 3: Задайте произвольный массив. Выведете 
+// его элементы, начиная с конца. Использовать 
+// рекурсию, не использовать циклы.
 
 
-int SumOfDigits (int number)
-{
-    
-    if (number == 0) return 0; 
-    int result = number % 10 + SumOfDigits(number / 10);
-    return result;
-}
-
-Console.WriteLine(SumOfDigits(82));
-
-
-
-
-// Рекурсия - вызов метода внутри метода
-// Факториал - произ-е чисел от 1 до N включительно 
-
-
-int FindFactorial (int n)
-{
-    
-    if (n == 1) return 1;
-    
-    return n * FindFactorial(n - 1);
-}
-Console.WriteLine(FindFactorial(4)); 
-
-
-
-
-
-
-
-
-
-
+//  int [] array = new int[] {1, 2, 5, 0, 10, 34};
+//  int Length = array.Length;
+//         for (int i = 0; i <array.Length; i++)
+//         {
+//             Console.Write(array[Length-1] + " ");
+//             Length = Length - 1;
+//         }
